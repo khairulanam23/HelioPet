@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1>Your cart</h1>
+            <button class="close-btn">✕</button>
+        </div>
+        <div class="shipping-alert">
+            <p>Your order is <b>$21 BDT</b> away from standard free shipping.</p>
+            <div class="shipping-progress">
+                <div class="shipping-progress-bar"></div>
+            </div>
+        </div>
+        <div class="cart-section">
+            <div class="section-header">
+                <div>Product</div>
+                <div>Total</div>
+            </div>
+            <div class="cart-items">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="https://i.pinimg.com/736x/29/39/85/29398518b55f8993326bc3e19cc05e40.jpg" alt="Khepsi Mug">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-title">Khepsi Mug</div>
+                        <div class="product-price">$14<sup>99</sup></div>
+                        <div class="quantity-actions">
+                            <div class="quantity-control">
+                                <button class="quantity-btn decrease">−</button>
+                                <input type="text" class="quantity-input" value="2" readonly>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <button class="remove-btn">🗑️</button>
+                    </div>
+                    <div class="product-total">$29<sup>98</sup></div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 180px;"></div>
+        <div class="cart-summary">
+            <div class="total-row">
+                <div>Estimated total</div>
+                <div class="cart-total">$29<sup>98</sup> BDT</div>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+            <button class="alternative-payment">Buy with <b>Shop</b><span style="font-weight:100">Pay</span></button>
+            <div class="more-options">More payment options</div>
+        </div>
+    </div>
+    <script src="cart.js"></script>
+</body>
+</html>

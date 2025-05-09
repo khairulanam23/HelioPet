@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar with Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-items" id="nav-items">
+                <a href="#" class="nav-item dropdown-icon">Shop</a>
+                <a href="#" class="nav-item">Our Story</a>
+                <a href="#" class="nav-item dropdown-icon">Science</a>
+                <a href="#" class="nav-item">Results</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="language-selector">ENG</div>
+            <div class="currency-selector">USD</div>
+            <!-- <div class="cart-container" id="cart-icon" onclick="window.location.href='./cart.html'"> -->
+                <div class="cart-icon"><a href="cart.html">🛒</a></div>
+                <div class="cart-counter">2</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content product-container">
+        <!-- Product Gallery Section -->
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="images/project1-1.png" alt="Helio Pet Device being used on a golden retriever" id="main-product-image">
+            </div>
+            <div class="thumbnail-gallery">
+                <div class="thumbnail active">
+                    <img src="/images/image.png" alt="Helio Pet Device on dark fur" onclick="changeMainImage(this)">
+                </div>
+                <div class="thumbnail">
+                    <img src="images/DSC01882.jpg" alt="Helio Pet Device on light fur" onclick="changeMainImage(this)">
+                </div>
+                <div class="thumbnail">
+                    <img src="images/dog-device-11_1024x1024.png" alt="Helio Pet Device on medium fur" onclick="changeMainImage(this)">
+                </div>
+                <div class="thumbnail">
+                    <img src="images/sd-3-7_480x480.png" alt="Helio Pet Device with red light" onclick="changeMainImage(this)">
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Info Section -->
+        <div class="product-info">
+            <div class="product-badges">
+                <span class="best-seller-badge">Best Seller</span>
+            </div>
+            
+            <div class="product-rating">
+                <div class="stars" style="color: rgba(255, 181, 37, 1);">
+                    <i class="fas fa-star" style="font-size: 17px; width: 14.17px; height: 13.46px;"></i>
+                    <i class="fas fa-star" style="font-size: 17px; width: 14.17px; height: 13.46px;"></i>
+                    <i class="fas fa-star" style="font-size: 17px; width: 14.17px; height: 13.46px;"></i>
+                    <i class="fas fa-star" style="font-size: 17px; width: 14.17px; height: 13.46px;"></i>
+                    <i class="fas fa-star" style="font-size: 17px; width: 14.17px; height: 13.46px;"></i>
+                </div>
+                <span class="rating-value">4.9</span>
+                <span class="review-count">(1,021 reviews)</span>
+            </div>
+            
+            <h1 class="product-title">Helio Pet Device™</h1>
+
+            <div class="customer-review">
+                <div class="customer-avatar">
+                    <img src="images/image6.jpg" alt="Customer Avatar">
+                </div>
+                <div class="review-content">
+                    <p>"We are BOTH so THANKFUL! I purchased this for my 12 year old Lab mix as he's got mobility issues with the back legs. It's been 3 weeks and already a difference!"</p>
+                </div>
+            </div>
+
+            <div class="product-features">
+                <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <p>Reduce aches & pains with 5-minute sessions.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <p>Cold Laser Therapy helps with Pain, Inflammation & more.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check"></i>
+                    <p>Professional Grade LLLT with 5 Laser Diodes.</p>
+                </div>
+            </div>
+
+            <div class="product-pricing">
+                <div class="original-price">$369.00</div>
+                <div class="sale-price">$249.00</div>
+            </div>
+
+            <div class="product-actions">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus" onclick="decrementQuantity()">-</button>
+                    <input type="text" value="1" id="quantity-input" readonly>
+                    <button class="quantity-btn plus" onclick="incrementQuantity()">+</button>
+                </div>
+            </div>
+
+            <div class="payment-options">
+                <img src="https://via.placeholder.com/50x30" alt="American Express">
+                <img src="https://via.placeholder.com/50x30" alt="Visa">
+                <img src="https://via.placeholder.com/50x30" alt="Mastercard">
+                <img src="https://via.placeholder.com/50x30" alt="PayPal">
+                <img src="https://via.placeholder.com/50x30" alt="Discover">
+                <img src="https://via.placeholder.com/50x30" alt="Afterpay">
+            </div>
+
+            <div class="additional-info">
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <span style="color: #007bff;">30 day money back</span>
+                    <span class="guarantee-text" style="color: black;">guarantee</span>
+                </div>
+                <div class="shipping">
+                    <i class="fas fa-truck"></i>
+                    <span style="color: rgb(19, 19, 19);">Expected</span>
+                    <span class="delivery-highlight">delivery in 2-4</span>
+                    <span style="color: rgb(19, 19, 19);">business days</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h1>Professional Grade, <br>Patented Design.</h1>
+                <p class="intro-text">
+                    It's required to have a <span class="highlight">strong enough output</span> power of 3-10 
+                    Joules per cm2 with correct wavelengths (660nm + 850nm).
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-number">1</div>
+                        <div class="feature-text">
+                            <p>The treatment head is 340% bigger so <strong>it can finish a treatment in <span class="highlight">3 minutes</span></strong>, vs 10-20 minutes.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-number">2</div>
+                        <div class="feature-text">
+                            <p>Has <span class="highlight">3 Modes of Power</span> to accommodate to any area. It also uses wavelengths 660nm and 850nm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="device-image">
+                <img src="images/333.png" alt="Light Therapy Device" id="device-img">
+                <div class="highlight-badges">
+                    <div class="badge power-badge">800% More Power</div>
+                    <div class="badge time-badge">3 Minutes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-container">
+        <div class="review-header">
+            <h1>Verified Reviews.</h1>
+            
+            <div class="rating-summary">
+                <div class="rating-overall">
+                    <div class="rating-number">4.8</div>
+                    <div class="rating-stars">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star half-filled">★</span>
+                    </div>
+                    <div class="rating-count">Based on 480 Reviews</div>
+                </div>
+                
+                <div class="rating-distribution">
+                    <div class="rating-row">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 90%"></div>
+                        </div>
+                        <div class="count">(427)</div>
+                    </div>
+                    <div class="rating-row">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 10%"></div>
+                        </div>
+                        <div class="count">(35)</div>
+                    </div>
+                    <div class="rating-row">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 3%"></div>
+                        </div>
+                        <div class="count">(9)</div>
+                    </div>
+                    <div class="rating-row">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 1%"></div>
+                        </div>
+                        <div class="count">(3)</div>
+                    </div>
+                    <div class="rating-row">
+                        <div class="stars">
+                            <span class="star filled">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                            <span class="star empty">★</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 1%"></div>
+                        </div>
+                        <div class="count">(6)</div>
+                    </div>
+                </div>
+                
+                <div class="thumbnail-gallery">
+                    <div style="width: 1px; height: 100px; background-color: #ccc;"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                    <div class="thumbnail"><img src="/api/placeholder/80/80" alt="User review photo"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="review-count-tab">
+            <span>Reviews</span>
+            <span class="count">480</span>
+        </div>
+        
+        <div class="reviews-list">
+            <div class="review-item">
+                <div class="review-avatar">
+                    <div class="avatar-circle">RC</div>
+                </div>
+                <div class="review-content">
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Rizalinda C. <span class="verified-tag">Verified Buyer</span></div>
+                        <div class="reviewer-location">
+                            <img src="/api/placeholder/16/11" alt="US Flag" class="flag-icon">
+                            <span>United States</span>
+                        </div>
+                    </div>
+                    <div class="review-rating">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <div class="review-title">Excellent product</div>
+                    </div>
+                    <div class="review-text">
+                        It works for me and my hubby and my 23 year old chihuahua
+                    </div>
+                    <div class="review-image">
+                        <img src="/api/placeholder/150/100" alt="Review photo">
+                    </div>
+                    <div class="review-actions">
+                        <button class="share-btn">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button class="page-btn prev" disabled>&lt;</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn dots">...</button>
+            <button class="page-btn">9</button>
+            <button class="page-btn next">&gt;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
